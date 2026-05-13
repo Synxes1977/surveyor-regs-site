@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regularisation Surveyors | Resolve Unauthorised Building Works</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Cache busting version added here -->
+    <link rel="stylesheet" href="style.css?v=1.3">
 </head>
 <body>
 
@@ -15,7 +16,7 @@
             <nav>
                 <ul>
                     <li><a href="#services">Our Services</a></li>
-                    <li><a href="#process">The Process</a></li>
+                    <li><a href="#triage-form">Eligibility</a></li>
                     <li><a href="#contact" class="btn-secondary">Contact Us</a></li>
                 </ul>
             </nav>
@@ -26,133 +27,89 @@
     <section class="hero">
         <div class="container hero-content">
             <h1>Resolve Unauthorised Building Work Safely and Legally.</h1>
-            <p>Expert surveying and regularisation applications to secure your certificate, protect your home, and keep your property sale on track.</p>
+            <p>Expert surveying and regularisation applications to secure your certificate and protect your home investment.</p>
             <a href="#triage-form" class="btn-primary">Start Your Free Compliance Review</a>
         </div>
     </section>
 
-    <!-- Identify Your Problem Section -->
+    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
                 <h2>How Can We Help You Today?</h2>
-                <p>Select your current situation to see how we manage the process.</p>
+                <p>Select your situation to see how we manage the process.</p>
             </div>
             
             <div class="card-grid">
-                <!-- Card 1 -->
                 <div class="card">
                     <h3>I Need Advice</h3>
-                    <p>I’ve bought or am selling a house with unauthorised works and don't know where to start or if I need a certificate.</p>
-                    <a href="#" class="card-link">Learn More &rarr;</a>
+                    <p>I’ve bought or am selling a house with unauthorised works and don't know where to start.</p>
+                    <a href="#triage-form" class="card-link">Learn More &rarr;</a>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="card">
                     <h3>Ready to Apply</h3>
-                    <p>I need an expert surveyor to manage my regularisation application, handle the 'opening up', and deal with Local Authority Building Control.</p>
-                    <a href="#" class="card-link">Start Application &rarr;</a>
+                    <p>I need an expert to manage my application and deal with Local Authority Building Control.</p>
+                    <a href="#triage-form" class="card-link">Start Application &rarr;</a>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="card">
                     <h3>Appeals & Remedial</h3>
-                    <p>My application was rejected by the council, and I need expert help to fix the structural or compliance issues.</p>
-                    <a href="#" class="card-link">Get Expert Help &rarr;</a>
+                    <p>My application was rejected, and I need expert help to fix structural or compliance issues.</p>
+                    <a href="#triage-form" class="card-link">Get Expert Help &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Placeholder for the JS Interactive Triage Form -->
+    <!-- Triage Form Section -->
     <section id="triage-form" class="triage-section">
         <div class="container">
             <h2>Am I Eligible for Regularisation?</h2>
-           <div id="interactive-form-container">
-    <!-- Step 1: Date Check -->
-    <div class="form-step active" id="step-1">
-        <h3>Was the building work carried out on or after 11th November 1985?</h3>
-        <p class="form-hint">Regularisation only applies to works completed after this date.</p>
-        <button class="btn-primary" onclick="nextStep(2, 'yes')">Yes, it was after 1985</button>
-        <button class="btn-secondary" onclick="showResult('pre1985')">No, it was before 1985</button>
-    </div>
+            <div id="interactive-form-container">
+                
+                <!-- Step 1: Date Check -->
+                <div class="form-step active" id="step-1">
+                    <h3>Was the building work carried out on or after 11th November 1985?</h3>
+                    <p class="form-hint">Regularisation only applies to works completed after this date.</p>
+                    <button class="btn-primary" onclick="nextStep(2, 'yes')">Yes, it was after 1985</button>
+                    <button class="btn-secondary" onclick="showResult('pre1985')">No, it was before 1985</button>
+                </div>
 
-    <!-- Step 2: Work Type -->
-    <div class="form-step" id="step-2">
-        <h3>What type of work needs regularising?</h3>
-        <button class="btn-secondary" onclick="nextStep(3, 'extension')">Extension / Conservatory</button>
-        <button class="btn-secondary" onclick="nextStep(3, 'internal')">Internal Alterations (e.g., removing a wall)</button>
-        <button class="btn-secondary" onclick="nextStep(3, 'loft')">Loft Conversion</button>
-    </div>
+                <!-- Step 2: Work Type -->
+                <div class="form-step" id="step-2">
+                    <h3>What type of work needs regularising?</h3>
+                    <button class="btn-secondary" onclick="nextStep(3, 'extension')">Extension / Conservatory</button>
+                    <button class="btn-secondary" onclick="nextStep(3, 'internal')">Internal Alterations</button>
+                    <button class="btn-secondary" onclick="nextStep(3, 'loft')">Loft Conversion</button>
+                </div>
 
-    <!-- Step 3: Urgency -->
-    <div class="form-step" id="step-3">
-        <h3>Are you currently trying to sell the property?</h3>
-        <button class="btn-primary" onclick="showResult('urgent')">Yes, and it's holding up the sale</button>
-        <button class="btn-secondary" onclick="showResult('standard')">No, just want to get it sorted</button>
-    </div>
+                <!-- Step 3: Urgency -->
+                <div class="form-step" id="step-3">
+                    <h3>Are you currently trying to sell the property?</h3>
+                    <button class="btn-primary" onclick="showResult('urgent')">Yes, holding up a sale</button>
+                    <button class="btn-secondary" onclick="showResult('standard')">No, just want it legal</button>
+                </div>
 
-    <!-- Results / Lead Capture -->
-    <div class="form-step" id="result-screen">
-        <h3 id="result-title"></h3>
-        <p id="result-message"></p>
-        
-        <!-- The actual form submission -->
-        <form id="lead-capture-form" action="YOUR_WEBHOOK_OR_FORM_ENDPOINT" method="POST">
-            <input type="hidden" name="work_type" id="hidden-work-type" value="">
-            <input type="hidden" name="urgency" id="hidden-urgency" value="">
-            
-            <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
-            <button type="submit" class="btn-primary" style="width: 100%;">Request Free Assessment</button>
-        </form>
-    </div>
-</div>
-    <!-- Step 1: Date Check -->
-    <div class="form-step active" id="step-1">
-        <h3>Was the building work carried out on or after 11th November 1985?</h3>
-        <p class="form-hint">Regularisation only applies to works completed after this date.</p>
-        <button class="btn-primary" onclick="nextStep(2, 'yes')">Yes, it was after 1985</button>
-        <button class="btn-secondary" onclick="showResult('pre1985')">No, it was before 1985</button>
-    </div>
-
-    <!-- Step 2: Work Type -->
-    <div class="form-step" id="step-2">
-        <h3>What type of work needs regularising?</h3>
-        <button class="btn-secondary" onclick="nextStep(3, 'extension')">Extension / Conservatory</button>
-        <button class="btn-secondary" onclick="nextStep(3, 'internal')">Internal Alterations (e.g., removing a wall)</button>
-        <button class="btn-secondary" onclick="nextStep(3, 'loft')">Loft Conversion</button>
-    </div>
-
-    <!-- Step 3: Urgency -->
-    <div class="form-step" id="step-3">
-        <h3>Are you currently trying to sell the property?</h3>
-        <button class="btn-primary" onclick="showResult('urgent')">Yes, and it's holding up the sale</button>
-        <button class="btn-secondary" onclick="showResult('standard')">No, just want to get it sorted</button>
-    </div>
-
-    <!-- Results / Lead Capture -->
-    <div class="form-step" id="result-screen">
-        <h3 id="result-title"></h3>
-        <p id="result-message"></p>
-        
-        <!-- The actual form submission -->
-        <form id="lead-capture-form" action="process.php" method="POST">
-            <input type="hidden" name="work_type" id="hidden-work-type" value="">
-            <input type="hidden" name="urgency" id="hidden-urgency" value="">
-            
-            <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
-            <button type="submit" class="btn-primary" style="width: 100%;">Request Free Assessment</button>
-        </form>
-    </div>
-</div>
-                <!-- The JavaScript logic will inject the form steps here -->
-                <p>Interactive eligibility checker loading...</p>
+                <!-- Results / Lead Capture -->
+                <div class="form-step" id="result-screen">
+                    <h3 id="result-title"></h3>
+                    <p id="result-message"></p>
+                    
+                    <form id="lead-capture-form" action="process.php" method="POST">
+                        <input type="hidden" name="work_type" id="hidden-work-type" value="">
+                        <input type="hidden" name="urgency" id="hidden-urgency" value="">
+                        
+                        <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 12px; margin-bottom: 10px; background: #222; border: 1px solid #444; color: #fff;">
+                        <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #444; color: #fff;">
+                        <button type="submit" class="btn-primary" style="width: 100%;">Request Free Assessment</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
-<!-- Site Footer -->
+
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-brand">
@@ -164,18 +121,20 @@
                 <ul>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
                 </ul>
             </div>
-            <div class="footer-contact">
+            <div id="contact" class="footer-contact">
                 <h4>Contact</h4>
-                <p>Email: info@yourdomain.com</p>
-                <p>Phone: 01234 567 890</p>
+                <p>Email: info@surveyorregs.com</p>
+                <p>Based in Poole, serving the South Coast.</p>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 SurveyorRegs. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Essential Script Link -->
+    <script src="script.js"></script>
 </body>
 </html>
