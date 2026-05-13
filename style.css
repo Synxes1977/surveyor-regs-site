@@ -1,19 +1,40 @@
 /* --- CSS Variables & Reset --- */
+/* --- Asplan-Inspired CSS Variables & Reset --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
 :root {
-    --primary-color: #0F2C59; /* Trustworthy Navy */
-    --secondary-color: #F8F9FA; /* Off-white background */
-    --accent-color: #D4A373; /* Calm, muted gold for CTAs */
+    --primary-color: #2C3539; /* Deep Gunmetal/Charcoal */
+    --secondary-color: #FAFAFA; /* Very crisp off-white */
+    --accent-color: #A68A64; /* Muted architectural gold/bronze */
     --text-main: #333333;
-    --text-light: #666666;
+    --text-light: #777777;
     --white: #FFFFFF;
-    --transition-speed: 0.3s;
+    --transition-speed: 0.4s;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
 }
 
 body {
@@ -31,8 +52,8 @@ body {
 /* --- Header & Navigation --- */
 .site-header {
     background-color: var(--white);
-    padding: 20px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Softer than a shadow */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -45,139 +66,147 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
     color: var(--primary-color);
+    letter-spacing: 1px;
 }
 
 .logo span {
     color: var(--accent-color);
+    font-style: italic;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 nav a {
     text-decoration: none;
-    color: var(--text-main);
-    font-weight: 500;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     transition: color var(--transition-speed);
 }
 
 nav a:hover {
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
-/* --- Buttons --- */
+/* --- Refined Buttons --- */
 .btn-primary, .btn-secondary {
     display: inline-block;
-    padding: 12px 24px;
-    border-radius: 4px;
+    padding: 14px 30px;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    transition: all var(--transition-speed);
+    border: 1px solid transparent;
 }
 
 .btn-primary {
-    background-color: var(--accent-color);
-    color: var(--white);
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: #bc8a59;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
     background-color: var(--primary-color);
     color: var(--white);
 }
 
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
 .btn-secondary:hover {
-    background-color: #0b1f40;
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 /* --- Hero Section --- */
 .hero {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 100px 0;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 120px 0;
     text-align: center;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    color: var(--primary-color);
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto 40px auto;
-    color: #e0e0e0;
+    color: var(--text-light);
 }
 
 /* --- Services / Identify Problem Section --- */
 .services {
-    padding: 80px 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
+    padding: 100px 0;
+    background-color: var(--white);
 }
 
 .section-header h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.section-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
 }
 
 .card {
     background: var(--white);
-    padding: 40px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-top: 4px solid var(--accent-color);
-    transition: transform var(--transition-speed);
+    padding: 50px 40px;
+    border: 1px solid #eaeaea;
+    transition: all var(--transition-speed);
+    text-align: center;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
 .card h3 {
     color: var(--primary-color);
-    margin-bottom: 15px;
-    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
 .card p {
     color: var(--text-light);
-    margin-bottom: 25px;
-    min-height: 80px;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
 }
 
 .card-link {
     text-decoration: none;
     color: var(--accent-color);
-    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color var(--transition-speed);
 }
 
 .card-link:hover {
-    text-decoration: underline;
+    color: var(--primary-color);
 }
 
 /* --- Triage Form Placeholder --- */
