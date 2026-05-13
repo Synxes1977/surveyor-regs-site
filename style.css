@@ -1,12 +1,12 @@
-/* --- Asplan-Inspired CSS Variables & Reset --- */
+/* --- Asplan-Inspired Dark Aesthetic --- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
 
 :root {
-    --primary-color: #2C3539; /* Deep Gunmetal/Charcoal */
-    --secondary-color: #FAFAFA; /* Very crisp off-white */
-    --accent-color: #A68A64; /* Muted architectural gold/bronze */
-    --text-main: #333333;
-    --text-light: #777777;
+    --primary-color: #000000; /* Pure Black Background */
+    --secondary-color: #121212; /* Slightly lighter black for cards/sections */
+    --accent-color: #D62828; /* Professional Deep Red */
+    --text-main: #FFFFFF; /* White text for readability */
+    --text-light: #A0A0A0; /* Soft grey for secondary text */
     --white: #FFFFFF;
     --transition-speed: 0.4s;
     
@@ -22,11 +22,11 @@
 }
 
 body {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--text-main);
     font-family: var(--font-body);
     line-height: 1.7;
-    font-weight: 400; /* Standardized weight */
+    font-weight: 300;
 }
 
 h1, h2, h3, h4 {
@@ -43,9 +43,9 @@ h1, h2, h3, h4 {
 
 /* --- Header & Navigation --- */
 .site-header {
-    background-color: var(--white);
+    background-color: var(--primary-color);
     padding: 25px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid #333; /* Subtle dark border */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -60,13 +60,14 @@ h1, h2, h3, h4 {
 .logo {
     font-family: var(--font-heading);
     font-size: 1.8rem;
-    color: var(--primary-color);
+    color: var(--white); /* White Logo Text */
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .logo span {
-    color: var(--accent-color);
-    font-style: italic;
+    color: var(--accent-color); /* Red Logo Accent */
+    font-weight: bold;
 }
 
 nav ul {
@@ -79,17 +80,17 @@ nav ul {
 nav a {
     text-decoration: none;
     color: var(--text-light);
-    font-size: 0.95rem;
-    letter-spacing: 1px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
     transition: color var(--transition-speed);
 }
 
 nav a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
-/* --- Refined Buttons --- */
+/* --- Buttons --- */
 .btn-primary, .btn-secondary {
     display: inline-block;
     padding: 14px 30px;
@@ -104,40 +105,38 @@ nav a:hover {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--white);
 }
 
 .btn-primary:hover {
     background-color: transparent;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--white);
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--primary-color);
 }
 
 /* --- Hero Section --- */
 .hero {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 120px 0;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 140px 0;
     text-align: center;
-    border-bottom: 1px solid #eaeaea;
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 25px;
-    color: var(--primary-color);
 }
 
 .hero-content p {
@@ -147,26 +146,20 @@ nav a:hover {
     color: var(--text-light);
 }
 
-/* --- Services Section --- */
+/* --- Services / Identify Problem Section --- */
 .services {
     padding: 100px 0;
-    background-color: var(--white);
+    background-color: var(--secondary-color); /* Dark grey separation */
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: var(--primary-color);
     margin-bottom: 15px;
-}
-
-.section-header p {
-    color: var(--text-light);
-    font-size: 1.1rem;
 }
 
 .card-grid {
@@ -176,21 +169,22 @@ nav a:hover {
 }
 
 .card {
-    background: var(--white);
+    background: var(--primary-color);
     padding: 50px 40px;
-    border: 1px solid #eaeaea;
+    border: 1px solid #333;
     transition: all var(--transition-speed);
     text-align: center;
 }
 
 .card:hover {
     border-color: var(--accent-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transform: translateY(-5px);
 }
 
 .card h3 {
-    color: var(--primary-color);
+    color: var(--white);
     margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
 .card p {
@@ -202,15 +196,15 @@ nav a:hover {
 .card-link {
     text-decoration: none;
     color: var(--accent-color);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     font-weight: bold;
 }
 
 /* --- Triage Form --- */
 .triage-section {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     padding: 100px 0;
     text-align: center;
 }
@@ -219,8 +213,8 @@ nav a:hover {
     max-width: 600px;
     margin: 30px auto;
     padding: 50px;
-    background: var(--white);
-    border: 1px solid #eaeaea;
+    background: var(--secondary-color);
+    border: 1px solid #333;
 }
 
 .form-step {
@@ -240,6 +234,7 @@ nav a:hover {
 /* --- Footer --- */
 .site-footer {
     background-color: var(--primary-color);
+    border-top: 1px solid #333;
     color: var(--white);
     padding: 80px 0 30px 0;
 }
@@ -251,46 +246,32 @@ nav a:hover {
     margin-bottom: 40px;
 }
 
-.footer-brand p, .footer-contact p {
-    color: #b0c4de;
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
-.site-footer .logo {
-    color: var(--white);
-}
-
 .footer-links h4, .footer-contact h4 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: var(--accent-color);
     text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-.footer-links ul {
-    list-style: none;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
 }
 
 .footer-links a {
-    color: #b0c4de;
+    color: var(--text-light);
     text-decoration: none;
     font-size: 0.9rem;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     transition: color 0.3s;
 }
 
 .footer-links a:hover {
-    color: var(--accent-color);
+    color: var(--white);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: #8fa3c0;
-    font-size: 0.8rem;
+    border-top: 1px solid #222;
+    color: #444;
+    font-size: 0.75rem;
     letter-spacing: 1px;
 }
