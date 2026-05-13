@@ -79,3 +79,23 @@ window.onload = function() {
         document.getElementById('triage-form').scrollIntoView({ behavior: 'smooth' });
     }
 };
+// --- FAQ Accordion Logic --- //
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const currentItem = question.parentElement;
+            
+            // Optional: Close other open FAQs when one is clicked
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== currentItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Toggle the clicked FAQ
+            currentItem.classList.toggle('active');
+        });
+    });
+});
