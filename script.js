@@ -49,4 +49,15 @@ function showResult(outcome) {
 
     // Show the result screen
     document.getElementById('result-screen').classList.add('active');
+
 }
+
+// Check for successful form submission on page load
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('status') === 'success') {
+        alert("Thank you! Your assessment request has been received. We will be in touch shortly.");
+        // Clean up the URL so it doesn't keep alerting on refresh
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+};
