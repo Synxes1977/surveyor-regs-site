@@ -394,9 +394,11 @@ nav a:hover {
 
 /* --- Footer --- */
 /* --- Footer Accreditations --- */
+
 .accreditation-container {
     display: flex;
     align-items: center;
+    justify-content: center; /* This centers the logos */
     gap: 30px; /* Controls the space between the two logos */
     margin-top: 25px;
 }
