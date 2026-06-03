@@ -413,6 +413,16 @@ nav a:hover {
     color: var(--text-light);
 }
 
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+.footer-links a:hover {
+    color: var(--accent-color); /* Turns red when hovered to match the rest of the site */
+}
+
 /* =========================================
    --- CONSOLIDATED MOBILE ADJUSTMENTS --- 
    ========================================= */
