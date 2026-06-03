@@ -78,7 +78,7 @@ nav ul {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 25px;
 }
 
 nav a {
@@ -92,6 +92,21 @@ nav a {
 
 nav a:hover {
     color: var(--accent-color);
+}
+
+/* Click-to-Call specific styling */
+.nav-phone {
+    font-weight: 700;
+    color: var(--white);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-phone:hover {
+    color: var(--accent-color);
+    transform: scale(1.05); /* Slight pop-out effect on hover */
 }
 
 /* --- Buttons --- */
