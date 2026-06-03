@@ -389,6 +389,15 @@ nav a:hover {
     gap: 40px;
 }
 
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px; /* Pushes it down from the main footer links */
+    padding-top: 20px;
+    border-top: 1px solid #222; /* Adds a subtle dark line above the copyright */
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
 /* =========================================
    --- CONSOLIDATED MOBILE ADJUSTMENTS --- 
    ========================================= */
