@@ -393,6 +393,26 @@ nav a:hover {
 }
 
 /* --- Footer --- */
+/* --- Footer Accreditations --- */
+.accreditation-container {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Controls the space between the two logos */
+    margin-top: 25px;
+}
+
+.accreditation-container img {
+    height: 50px; /* Locks both logos to the exact same height */
+    width: auto;  /* Prevents the logos from stretching or squishing */
+    filter: brightness(0) invert(1); /* Forces any colored logo to become pure white */
+    transition: transform 0.3s ease;
+    opacity: 0.9;
+}
+
+.accreditation-container a:hover img {
+    transform: scale(1.05); /* Slight pop effect when hovered */
+    opacity: 1;
+}
 .site-footer {
     border-top: 1px solid #333;
     padding: 80px 0 30px 0;
