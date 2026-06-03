@@ -424,6 +424,18 @@ nav a:hover {
         text-align: center;
     }
 
+    /* FIX: Stack the navigation links neatly so they don't squish */
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    /* Center the phone icon and number */
+    .nav-phone {
+        justify-content: center;
+    }
+
     /* Hero Text Scaling */
     .hero-content h1 { font-size: 2.2rem; }
     
