@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Recipient: Where you want the leads sent
-    $recipient = "Mrjamessinclair@gmail.com"; 
+    $recipient = "Keith@asplan.co.uk"; 
 
     // Subject line for your inbox
     $subject = "URGENT Lead: Regularisation Enquiry from $name";
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_content = "You have received a new regularisation enquiry via the website.\n\n";
     $email_content .= "--- Client Details ---\n";
     $email_content .= "Name: $name\n";
-    $email_body .= "Phone: $phone\n";
+    $email_content .= "Phone: $phone\n";
     $email_content .= "Email: $email\n\n";
     $email_content .= "--- Case Details ---\n";
     $email_content .= "Work Type: " . ucfirst($workType) . "\n";
