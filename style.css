@@ -524,3 +524,9 @@ input[type="email"].form-input {
 .btn-full-width {
     width: 100%;
 }
+/* --- Legal Pages Styling --- */
+.privacy-body h3 {
+    color: var(--accent-color);
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
