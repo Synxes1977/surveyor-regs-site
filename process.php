@@ -20,7 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Recipient: Where you want the leads sent
-    $recipient = "Keith@asplan.co.uk"; 
+    $recipient = "Keith@asplan.co.uk
+    "; 
 
     // Subject line for your inbox
     $subject = "URGENT Lead: Regularisation Enquiry from $name";

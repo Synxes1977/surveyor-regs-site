@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /process.php
+Allow: /
+
+Sitemap: https://regularisation.co.uk/sitemap.xml
