@@ -471,6 +471,9 @@ nav a:hover {
         justify-content: center;
     }
 
+    .hero {
+        padding: 40px 0; /* Shrinks the massive 140px desktop gap */
+    }
     /* Hero Text Scaling */
     .hero-content h1 { font-size: 2.2rem; }
     
@@ -529,4 +532,21 @@ input[type="email"].form-input {
     color: var(--accent-color);
     margin-top: 35px;
     margin-bottom: 15px;
+}
+
+/* --- Bulletproof Email & Footer Link Styling --- */
+.footer-contact a, 
+.footer-bottom a,
+.email-link,
+a[href^="mailto:"] {
+    color: var(--text-light) !important;
+    text-decoration: none !important;
+    transition: color var(--transition-speed);
+}
+
+.footer-contact a:hover, 
+.footer-bottom a:hover,
+.email-link:hover,
+a[href^="mailto:"]:hover {
+    color: var(--accent-color) !important;
 }
