@@ -488,3 +488,39 @@ nav a:hover {
         padding: 15px;
     }
 }
+    /* --- Standardized Utility Classes (Moved from Inline HTML) --- */
+
+.hero-actions {
+    margin-top: 20px;
+}
+
+.hero-subtext {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #222;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+input[type="email"].form-input {
+    margin-bottom: 15px; /* Keeps the slightly larger gap before the submit button */
+}
+
+.btn-full-width {
+    width: 100%;
+}
